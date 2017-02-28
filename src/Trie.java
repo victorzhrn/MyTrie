@@ -1,6 +1,5 @@
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Hashtable;
 
 public class Trie {
 	public TrieNode root;
