@@ -24,6 +24,7 @@ public class TrieTest {
 		t.insert("att");
 		t.insert("ats");
 		assertEquals("[att, ats]",t.getAllPrefix("at").toString());
+		assertEquals("[att, ats]",t.getAllPrefix("").toString());
 		
 		t.insert("atts");
 		assertEquals("[att, atts]",t.getAllPrefix("att").toString());
@@ -33,6 +34,8 @@ public class TrieTest {
 		assertEquals("[hallo, happy]",t.getAllPrefix("h").toString());
 		
 		assertEquals("[hallo]",t.getAllPrefix("hallo").toString());
+		
+		assertEquals(null,t.getAllPrefix("aljsdflk"));
 	}
 
 	@Test
@@ -67,6 +70,7 @@ public class TrieTest {
 		t.insert("at");
 		t.insert("attt");
 		t.insert("acc");
+		assertTrue(t.checkStartWith(""));
 		assertFalse(t.checkStartWith("s"));
 		assertTrue(t.checkStartWith("attt"));
 		assertFalse(t.checkStartWith("an"));

@@ -38,10 +38,15 @@ public class Trie {
 		HashSet<String> hs = new HashSet<String>();
 		if (!checkStartWith(prefix)) return null;
 		TrieNode prefix_node = root;
+		
 		for (int i=0 ; i < prefix.length(); i++){
 			prefix_node = prefix_node.getChild(prefix.charAt(i));
 		}
-		prefix_node.toStringHelper(hs, prefix_node, prefix.substring(0, prefix.length()-1));
+		if(prefix.length()==0){
+			prefix_node.toStringHelper(hs, prefix_node, prefix);
+		}else{
+			prefix_node.toStringHelper(hs, prefix_node, prefix.substring(0, prefix.length()-1));
+		}
 		return hs;
 	}
 	

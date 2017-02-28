@@ -44,7 +44,6 @@ public class TrieNode {
 	}
 
 	public void toStringHelper(HashSet<String> hs, TrieNode n, String prefix) {
-
 		if (n.isLeaf){
 			hs.add((prefix + n.c).trim());
 		}	
